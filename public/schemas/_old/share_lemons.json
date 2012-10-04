@@ -1,0 +1,79 @@
+{
+    "action": "/agent/save",
+    "method": "post",
+    "html":[
+        {
+            "type":"fieldset",
+            "html":[
+                  {
+                    "name":"title",
+                    "type":"hidden"
+                  },
+                  {
+                    "name":"from",
+                    "caption":"From",
+                    "type":"text"
+                  },
+                  {
+                    "name":"to",
+                    "caption":"To",
+                    "type":"text"
+                  }, 
+                  {
+                    "type":"div",
+                    "html": "Switch",
+                    "id": "toggle_to_from"
+                  },
+                  {
+                    "name":"number_lemons_used",
+                    "caption":"Number of Lemons",
+                    "type":"number",
+                    "validate" : {
+                        "minlength" : 0,
+                        "number": true
+                    }
+                  },
+                  {
+                    "name":"proof",
+                    "caption":"Show it. Submit a URL for media about this.",
+                    "type":"url"
+                  },
+                  {
+                      "name":"lat",
+                      "id":"lat",
+                      "type":"text",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"lon",
+                      "id":"lon",
+                      "type":"text",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"kind",
+                      "value":"agent",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"sponsor",
+                      "value":"0",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"player_id",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"art",
+                      "value":"/images/icons/lemon_share_icon.png",
+                      "type":"hidden"
+                  }
+            ]
+        },
+        {
+            "type":"submit",
+            "value":"Save"
+        }
+    ]
+}

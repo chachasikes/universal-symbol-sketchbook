@@ -1,0 +1,160 @@
+{
+    "html":[
+        {
+            "type":"fieldset",
+            "html":[
+                  {
+                    "name":"title",
+                    "type":"hidden",
+                    "value": "Claim"
+                  },
+                  {
+                    "name":"who_played",
+                    "caption": "<h3>Who Played?</h3>",
+                    "type" : "div"
+                  },
+                  {
+                    "name":"player_name",
+                    "type" : "div"
+                  },
+                  {
+                    "name":"number_participants",
+                    "type":"number",
+                    "validate" : {
+                        "positiveNumber" : true
+                      }
+                  },
+                  {
+                    "name":"who_team",
+                    "caption": "<h3>TEAM</h3>",
+                    "type" : "div"
+                  },
+                  {
+                    "name":"teams_display",
+                    "id": "teams_display",
+                    "caption": "Enter the Team",
+                    "type":"div"
+                  }, 
+                  {
+                    "name":"teams",
+                    "id": "teams",
+                    "type":"select",
+                    "multiple": "multiple",
+                    "options": {
+                      "team-0": "San Francisco", 
+                      "team-1": "Oakland", 
+                      "team-2": "Berkeley", 
+                      "team-3": "San Jose"
+                    }
+                  },  
+                  {
+                    "name":"challenge_id",
+                    "type":"select",
+                    "options" : {
+                      "id" : "Challenge"
+                    }
+                  },
+                  {
+                    "name":"how_lemony",
+                    "caption": "<h3>How Lemony was it?</h3>",
+                    "type" : "html"
+                  },
+                  {
+                    "name":"number_lemons_involved",
+                    "caption":"Number of Lemons Used",
+                    "type":"radiobuttons",
+                    "options" : {
+                        "a_few" : "A few",
+                        "box" : "A box",
+                        "truckload" : "A truckload"
+                      }
+                  },
+                  {
+                    "name":"notes",
+                    "id": "notes",
+                    "caption":"Story",
+                    "type":"textarea"
+                  },                  
+                  {
+                    "name":"proof_title",
+                    "caption": "<h3>Proof!</h3>",
+                    "type" : "div"
+                  },
+                  {
+                    "name":"proof",
+                    "caption":"Show it. Submit a URL for media about this.",
+                    "type":"url",
+                    "placeholder": "http://... Flickr, youTube, Instagram, Twitter, etc"
+                  },
+                  {
+                      "name":"lat",
+                      "id":"lat",
+                      "type":"hidden"
+
+                  },
+                  {
+                      "name":"lon",
+                      "id":"lon",
+                      "type":"hidden"
+
+                  },
+                  {
+                      "name":"approved",
+                      "value":0,
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"quality_rating",
+                      "value":0,
+                      "type":"hidden"
+                  },
+                  {   
+                      "name": "oembed_provider",
+                      "id": "oembed_provider",
+                      "type":"hidden"
+                  },
+                  {   
+                      "name": "oembed_url",
+                      "id": "oembed_url",
+                      "type":"hidden"
+                  },
+                  {   
+                      "name": "oembed_json_cache",
+                      "id": "oembed_json_cache",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"challenge",
+                      "id":"challenge",
+                      "value": "",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"kind",
+                      "value":"claim",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"sponsor",
+                      "value":"http://lemonopoly.org",
+                      "type":"hidden"
+                  },
+  
+                  {
+                      "name":"player_id",
+                      "id": "player_id",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"art",
+                      "value":"/images/icons/claim.png",
+                      "type":"hidden"
+                  },
+                  {
+                      "type":"submit",
+                      "value":"Save"
+                  }
+            ]
+        }
+    ]
+}

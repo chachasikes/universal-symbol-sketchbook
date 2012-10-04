@@ -1,0 +1,85 @@
+{
+    "action": "/agent/save",
+    "method": "post",
+    "html":[
+        {
+            "type":"fieldset",
+            "html":[
+                  {
+                    "name":"title",
+                    "type":"hidden",
+                    "value": "Lemon Product"
+                  },
+                  {
+                    "name":"from",
+                    "caption":"From",
+                    "type":"text"
+                  },
+                  {
+                    "name":"to",
+                    "caption":"To",
+                    "type":"text"
+                  }, 
+                  {
+                    "type":"div",
+                    "html": "Switch",
+                    "id": "toggle_to_from"
+                  },
+                  {
+                    "name":"product_name",
+                    "caption":"What kind of Lemony Product?",
+                    "type":"text"
+                  },
+                  {
+                    "name":"number_lemons_used",
+                    "caption":"Number of Lemons Used",
+                    "type":"number",
+                    "validate" : {
+                        "positiveNumber" : true
+                    }
+                  },
+                  {
+                    "name":"proof",
+                    "caption":"Show it. Submit a URL for media about this.",
+                    "type":"url"
+                  },
+                  {
+                      "name":"lat",
+                      "id":"lat",
+                      "type":"text",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"lon",
+                      "id":"lon",
+                      "type":"text",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"kind",
+                      "value":"agent",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"sponsor",
+                      "value":"0",
+                      "type":"hidden"
+                  },
+  
+                  {
+                      "name":"player_id",
+                      "type":"hidden"
+                  },
+                  {
+                      "name":"art",
+                      "value":"/images/icons/lemon_product_icon.png",
+                      "type":"hidden"
+                  }
+            ]
+        },
+        {
+            "type":"submit",
+            "value":"Save"
+        }
+    ]
+}

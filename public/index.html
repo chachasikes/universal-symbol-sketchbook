@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <title>Icon Camp!</title>
+    <meta name="description" content="Collaboratively creating new civic symbols for the public domain.">
+    <meta name="author" content="http://iconcamp.org">
+    <meta property="og:site_name" content="IconCamp" />
+    <meta property="og:description" content="Collaboratively creating new civic symbols for the public domain." />
+    <meta property="og:title" content="IconCamp" />
+    <meta property="og:url" content="http://iconcamp.org" />
+    <meta property="og:image" content="http://iconcamp.png/images/iconcamp.png" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+ 
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/libraries/bootstrap/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/libraries/bootstrap/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/libraries/bootstrap/images/ico/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/libraries/bootstrap/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    <link href="/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='/css/jquery.qtip.min.css' rel='stylesheet' type='text/css' /> 
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31304169-1']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Set up Facebook -->
+    <div id="fb-root"></div>
+    
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
+        <a class="brand" href="#home" data-toggle="tab">IconCamp!</a>
+
+        <ul class="nav visible-desktop">
+          <li><a href="#symbols" data-toggle="tab">Symbols</a></li>
+          <li><a href="#camps" data-toggle="tab">IconCamps</a></li>
+          <li><a href="#howto" data-toggle="tab">Do your own!</a></li>
+        </ul>    
+
+        <a href="#menu" class="menu-link pull-right hidden-desktop"><i class="icon-list"></i></a>  
+      </div>
+    </div>    
+
+  <!-- Main page content -->
+  <div class="container-fluid main-content">
+
+  <div id="page-content" class="tab-content">
+
+    <div id="menu" class="tab-pane">
+      <ul class="nav nav-tabs nav-stacked">
+        <li><a href="#symbols" data-toggle="tab">Symbols</a></li>
+        <li><a href="#camps" data-toggle="tab">IconCamps</a></li>
+        <li><a href="#howto" data-toggle="tab">Make Icons!</a></li>
+      </ul>
+    </div>
+
+    <!-- home-->
+    <div class="tab-pane active fade in row" id="home">
+      <div class="row span4">
+        <p>Symbols!</p>
+      </div>          
+    </div><!--/end home-->
+
+    <div class="tab-pane active fade in row" id="symbols">
+        <div id="symbols-list" class="span12">
+          <div class="loading"></div>
+          <script type="text/template" id="symbolsTemplate">  
+          <ul class="list">
+          <% _.each(symbols, function (symbol) { %> 
+            <% if (symbol.name !== undefined) { %>  
+              <li>
+                <h3 class="title"><%= symbol.name %></h3>
+
+                <div class="media">
+                  <a class="embed image link" href="<%= symbol.url %>">Check it out</a>
+                </div>
+                    
+                <div class="content">
+                  <span class="label <%= symbol.status_display %>"><%= symbol.status %></span>
+                  <span class="label">Team<%= symbol.team %></span>
+                  <span class="label">Updated<%= symbol.lastupdated %></span>
+                  <span class="label">Topic<%= symbol.topic %></span>
+                  <span class="label">Tags<%= symbol.tags %></span>
+                  <span class="label"><a href="<%= symbol.linktofinalnounprojectsubmissions %>">Final Vector Source</a></span>
+                  <span class="label">Event <%= symbol.event %></span>
+                  <span class="label"><%= symbol.body %></span>
+                </div>
+                
+                
+                
+              </li>  
+            <% } %>
+          <% }); %>
+          </ul>
+          </script>
+        </div>
+    </div>
+
+
+    </div><!--/end tab content-->
+  </div><!--/end container-fluid-->
+  
+  <hr>
+      <footer>
+          <div class="container-fluid">  
+          <div class="row-fluid">           
+            <ul class="nav nav-pills">
+              <li><a href="#about" data-toggle="tab">About</a></li>
+              <li><a href="#feedback" data-toggle="tab">Feedback</a></li>
+            </ul>       
+            <div class="contact">
+                <p>&copy; IconCamp 2011-2012</p>
+            </div>
+          </div>
+        </div><!--/end container-fluid-->
+      </footer>
+
+    </div><!--/.fluid-container-->
+    <!-- Javascript libraries -->
+    <script type="text/javascript" src="/javascripts/libraries/jquery-1.8.0.min.js"></script>
+
+
+    <script type="text/javascript" src="/libraries/bootstrap/js/bootstrap.js"></script>    
+
+    <script type="text/javascript" src="/javascripts/libraries/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="/libraries/jquery.dform/dist/jquery.dform-0.2.0.min.js"></script>
+
+
+    <script type="text/javascript" src="/javascripts/libraries/tabletop.js"></script>
+
+
+
+    <script type="text/javascript" src="/javascripts/libraries/json2.js"></script>
+    <script type="text/javascript" src="/javascripts/libraries/underscore-min.js"></script>
+
+    <script type="text/javascript" src="/javascripts/libraries/jquery.oembed.js"></script>
+    <script type="text/javascript" src="/javascripts/libraries/jquery.masonry.min.js"></script>
+    <script type="text/javascript" src="/javascripts/libraries/jquery.infinitescroll.min.js"></script>
+
+    <script type="text/javascript" src="/javascripts/custom/iconcamp.js"></script>
+
+  </body>
+</html>

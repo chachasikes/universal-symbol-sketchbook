@@ -1,0 +1,257 @@
+{
+    "html":[
+        {
+            "type":"fieldset",
+            "html":[
+                {
+                    "name":"title",
+                    "caption": "<h2>Lemon Intake Form</h2>",
+                    "type": "div"
+                },
+                {
+                    "name":"variety",
+                    "caption": "<h3>Lemon Tree Variety</h3><p>If you know the variety of the lemon tree, please select it.</p>",
+                    "type":"select",
+                    "options" : {
+                        "general_lemon" : {
+                          "type" : "optgroup",
+                          "label" : "Lemon",
+                          "options" : {
+                            "lemon" : {
+                              "selected" : "selected",
+                              "html" : "Lemon"
+                            }
+                          }
+                        },
+                        "bay_area_lemons" : {
+                          "type" : "optgroup",
+                          "label" : "Bay Area Lemons",
+                          "options" : {
+                            "lemon_meyer" : "Improved Meyer Lemon",
+                            "lemon_eureka" : "Eureka Lemon",
+                            "lemon_lisbon" : "Lisbon Lemon",
+                            "lemon_variegated_pink" : "Variegated Pink Lemon (Pink Lemonade)",
+                            "lemon_bearss" : "Bearss Lime"
+                          }
+                        },
+                        "uncommon_lemons" : {
+                          "type" : "optgroup",
+                          "label" : "Less Common Lemons",
+                          "options" : {
+                            "lemon_armstrong" : "Armstrong Lemon",
+                            "lemon_avon" : "Avon Lemon",
+                            "lemon_berna" : "Avon Berna",
+                            "lemon_femminello_ovale" : "Femminello Ovale Lemon",
+                            "lemon_bonnie_brae" : "Bonnie Brae Lemon",
+                            "lemon_bush" : "Bush Lemon",
+                            "citron" : "Citron",
+                            "lemon_genoa" : "Genoa Lemon",
+                            "lemon_harvey" : "Harvey Lemon",
+                            "lemon_interdonato" : "Interdonato Lemon",
+                            "lemon_jhambiri" : "Jhambiri Lemon",
+                            "lemon_mediterranean" : "Mediterranean Lemon",
+                            "lemon_monachello" : "Monachello Lemon",
+                            "lemon_meyer_improved" : "Improved Meyer Lemon",
+                            "lemon_nepali_oblong" : "Nepali Oblong Lemon",
+                            "lemon_nepali_round" : "Nepali Round Lemon",
+                            "lemon_perrine" : "Perrine Lemon",
+                            "lemon_ponderosa" : "Ponderosa Lemon",
+                            "lemon_rosenberger": "Rosenberger Lemon",
+                            "lemon_rough": "Rough Lemon",
+                            "lemon_santa_theresa" : "Santa Theresa Lemon",
+                            "lemon_sorrento" : "Sorrento Lemon",
+                            "lemon_sweet": "Sweet Lemon",
+                            "lemon_verna" : "Verna Lemon",
+                            "lemon_villafranca" : "Villafranca Lemon",
+                            "lemon_yen_ben" : "Yen Ben Lemon"
+                          }
+                        }
+                      }
+                },
+                {
+                    "name":"quantity_trees",
+                    "id":"quantity_trees",
+                    "caption":"<h3>How many lemon trees?</h3>",
+                    "type":"number",
+                    "value": 1
+                },
+                {
+                    "name":"description",
+                    "caption":"<h3>Notes</h3><p>Any words about these lemons that you would like to share?</p>",
+                    "type":"textarea",
+                    "placeholder":"About this tree"
+                },
+                {
+                  "name":"proof",
+                  "caption":"<h3>Picture.</h3><p>Submit a URL for a picture of the tree. (You may come back and add this later.)</p>",
+                  "type":"url",
+                  "placeholder":"http://"
+                },                
+
+                {
+                    "name":"stewardship",
+                    "id": "stewardship",
+                    "caption":"<h3>Stewardship</h3><p>Is this a public or private lemon tree?</p>",
+                    "type":"radiobuttons",
+                    "options" : {
+                      "public" : "<em>Public</em> Open Access (Lemons are free to pick.)",
+                      "semi-public" : "<em>Semi-Public</em> (Tree on public land but requires appointment to visit.)",
+                      "communally_grown" : "<em>Communal</em> (This tree is part of a farm or garden.)",
+                      "private_by_appt" : "<em>Private Tree</em> (Visit by appointment only.)",
+                      "private" : "<em>Private Tree</em> (Please do not disturb residents, tree noted for data purposes only)",
+                      "undetermined" : "<em>Undetermined</em>"
+                    }
+                },
+                {
+                    "name":"ownership",
+                    "id": "ownership",
+                    "caption":"<h3>Ownership</h3><p>Do you own or take care of this tree?</p>",
+                    "type":"radiobuttons",
+                    "options" : {
+                      "1" : "Yes",
+                      "0" : "No"
+                    }
+                },
+                
+                {
+                  "type": "div",
+                  "name": "lemon_owner_data",
+                  "id" : "lemon_owner_data",
+                  "html" :[
+                    {
+                      "name":"sharing",
+                      "caption":"<h3>Sharing</h3><p>Are you interested in sharing lemons?</p> You have many options on how to share your fruit. Select any that interest you. This will help people know the best way to interact with you.",
+                      "type":"checkboxes",
+                      "options" : {
+                        "not_now": "<em>No</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-detail\">Not able to share lemons at this time.</span>",
+                        "maybe": "<em>Maybe</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-detail\">Will share under the right social conditions</span>",
+                        "sometimes": "<em>Sometimes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-detail\">Not always able to participate, but interested in sharing on occasion</span>",
+                        "claimed": "<em>Sorry</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-detail\">Lemons are already claimed and put to use</span>",
+                        "friends": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>For Friends</strong></span><span class=\"form-detail\">Lemons are available to friends only</span>",
+                        "distribute": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Distribute</strong></span><span class=\"form-detail\">I bring lemons with me to community gatherings</span>",
+                        "upick": "<em>Yes</em> <span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>U-PICK</strong></span><span class=\"form-detail\">Please come harvest the lemons</span>",
+                        "glean": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Glean</strong></span><span class=\"form-detail\">I would like gleaners to come with ladders and cherry pickers to get lemons in hard to reach places.</span>",
+                        "forage_pickup": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Forage Pickup</strong></span><span class=\"form-detail\">I would like to leave picked lemons out for pickup and redistribution through a foraging service to local food banks</span>",
+                        "trade": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Trade</strong></span><span class=\"form-detail\">I am interested in sharing lemons for trade or barter</span>",
+                        "supplier": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Supplier</strong></span><span class=\"form-detail\">I am interested in supplying local restaurants with lemons</span>",
+                        "market": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Market</strong></span><span class=\"form-detail\">I would like my lemons to be sold at a Farmer's Market to benefit local organizations and provide people without lemons access to local lemons.</span>",
+                        "store": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Store</strong></span><span class=\"form-detail\">I would like my lemons to be sold at the corner store</span>",
+                        "neighbors": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Neighbors</strong></span><span class=\"form-detail\">I would like to share lemons with my neighbors who do not have lemon trees.</span>",
+                        "source": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Source</strong></span><span class=\"form-detail\">I am interested in providing lemons for value-added products (such as preserves)</span>",
+                        "pickup_appt": "<em>Yes</em><span class=\"form-image\"><img src=\"images/spacer.gif\" /></span><span class=\"form-label\"><strong>Pickup Appt</strong></span><span class=\"form-detail\">Please contact me to come get lemons</span>"
+                      }
+                    },
+                    {
+                      "name": "productivity",
+                      "id": "productivity",
+                      "caption": "<h3>Productivity</h3><p>Will this tree produce lemons in 2012-2013?</p>",
+                      "type": "radiobuttons",
+                      "options": {
+                        "yes" : "Yes",
+                        "no" : "No"
+                        }
+                    },
+                    {
+                      "name":"condition",
+                      "id": "condition",
+                      "caption": "<h3>Is the tree healthy?</h3>",
+                      "type":"radiobuttons",
+                      "options": {
+                        "healthy": "<em>Yes</em><span class=\"form-detail\">This tree is healthy.</span>",
+                        "fungus_undiagnosed": "<em>No</em><span class=\"form-detail\">Tree has a known pest, disease or fungus, and was <em>not</em> diagnosed by a professional</span>",
+                        "fungus_dianosed": "<em>No</em><strong>Diagnosed</strong><span class=\"form-detail\">Tree has a known pest, disease or fungus, and <em>was</em> diagnosed by a professional.</span>"
+                        }
+                      },                    
+                      {
+                      "name": "edible",
+                      "id": "edible",
+                      "caption": "<h3>Edibility</h3><p>Does your lemon tree produce fruit that you consider to be edible or you use in your cooking?</p>",
+                      "type": "radiobuttons",
+                      "options": {
+                        "1" : "<em>Yes!</em>",
+                        "0" : "<em>No</em> Fruits are overgrown, pithy, or deformed."
+                        }
+                      },
+                      {
+                          "name":"contact_name",
+                          "caption":"<h3>Tree Contact Person Name</h3>",
+                          "type":"text",
+                          "placeholder":"E.g. Name"
+                      },
+                      {
+                          "name":"contact_email",
+                          "caption":"<h3>Tree Contact Person E-mail</h3><p>Privacy: Your e-mail address will not be sold or given to any other organizations.</p>",
+                          "type":"text",
+                          "placeholder":"E.g. name@example.com",
+                          "validate":{
+                              "email":true
+                          }
+                      }                          
+                ]
+                },
+
+                {
+                    "name":"lemon_services",
+                    "caption":"<h3>Lemon Services</h3><p>We hope that Lemonopoly will boost visibility for the many organizations working to improve access to fresh fruit, foraging opportunities, public fruit tree data and information about growing healthy fruit trees.</p><p>Here are some organizations that are already building the local lemon economy.</p>",
+                    "type": "div",
+                    "html": [                          
+                      {
+                        "type":"checkboxes",
+                        "name": "data_sharing",
+                        "caption": "<h4>Public Fruit Tree Data</h4><p>We are working to improve maps of public fruit trees. A number of Bay Area cities already have efforts to make public fruit tree data accessible. May we share your tree information with the following organizations?</p>",
+                        "options": {
+                          "just_one_tree": "<em>Yes</em> <a href=\"http://justonetreesf.org\">Just One Tree</a> (San Francisco) ",
+                          "friends_of_the_urban_forest": "<em>Yes</em> <a href=\"http://friendsofurbanforest.org\">Friends of the Urban Forest</a> (San Francisco)"
+                        }
+                      },
+                      {
+                        "type":"checkboxes",
+                        "name": "foraging_sharing",
+                        "caption": "<h4>Local Foraging Programs</h4><p>Many of the cities playing Lemonopoly already have urban foraging and gleaning programs. If you own your tree and indicate how you would like your fruit shared, select which program you would like to know about your tree and we <em>will</em> pass along your email address (periodically) so they may contact you.</p>",
+                        "options": {
+                          "village_harvest": "<em>Yes</em> <a href=\"http://villageharvest.org\">Village Harvest</a> (San Jose) ",
+                          "forage_berkeley": "<em>Yes</em> <a href=\"http://forageberkeley.org\">Forage Berkeley</a> (Berkeley) ",
+                          "forage_oakland": "<em>Yes</em> <a href=\"http://forageoakland.org\">Forage Oakland</a> (Oakland) ",
+                          "forage_city": "<em>Yes</em> <a href=\"http://forageoakcity.org\">Forage City</a> (Mostly Oakland) "
+                        }
+                      } 
+                    ]
+                },
+                {
+                    "name":"lat",
+                    "id":"lat",
+                    "type":"hidden"
+                },
+                {
+                    "name":"lon",
+                    "id":"lon",
+                    "type":"hidden"
+                },
+                {
+                    "name":"kind",
+                    "value":"tree",
+                    "type":"hidden"
+                },
+                {
+                    "name":"sponsor",
+                    "value":"http://lemonopoly.org",
+                    "type":"hidden"
+                },
+                {
+                    "name":"player_id",
+                    "id":"player_id",
+                    "type":"hidden"
+                },
+                {
+                    "name":"art",
+                    "value":"/images/icons/lemon_tree_icon.png",
+                    "type":"hidden"
+                }
+            ]
+        },
+        {
+            "type":"submit",
+            "value":"Save"
+        }
+    ]
+}

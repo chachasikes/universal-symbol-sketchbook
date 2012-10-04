@@ -1,0 +1,84 @@
+{
+    "html":[
+          {
+            "type":"fieldset",
+            "id": "profile-form",
+            "html":[            
+                {
+                    "name":"title",
+                    "caption":"<h3>How may we call you</h3>",
+                    "type":"text",
+                    "id": "player_name"
+                },
+
+                {
+                    "name":"title",
+                    "caption": "<h2>Team!</h2>",
+                    "type": "div"
+                },
+                {
+                      "name":"team",
+                      "caption":"PICK YOUR TEAM",
+                      "type":"radiobuttons",
+                      "id": "team",
+                      "options" : {
+                        "San Jose" : "San Jose",
+                        "San Francisco" : "San Francisco",
+                        "Oakland" : "Oakland",
+                        "Berkeley" : "Berkeley"
+                      }
+                },                
+                {
+                    "name":"zipcode",
+                    "caption":"<h3>Zipcode</h3>What's your zipcode?",
+                    "type":"text",
+                    "id": "zipcode",
+                    "validate" : {
+                        "required" : true,
+                        "validZipcode": true,
+                        "minlength" : 5,
+                        "maxlength" : 5,
+                        "messages" : {
+                            "required" : "Required input"
+                        }
+                    }
+                },
+                {
+                    "name":"lat",
+                    "id":"lat",
+                    "type":"hidden"
+                },
+                {
+                    "name":"lon",
+                    "id":"lon",
+                    "type":"hidden"
+                },
+                {
+                    "name":"kind",
+                    "value":"profile",
+                    "type":"hidden"
+                },
+                {
+                    "name":"sponsor",
+                    "value":"http://lemonopoly.org",
+                    "type":"hidden"
+                },
+                {
+                    "name":"icon",
+                    "value":"0",
+                    "type":"hidden"
+                },
+                {
+                    "name":"player_id",
+                    "id": "player_id",
+                    "type": "hidden"
+                },
+               
+                {
+                    "type":"submit",
+                    "value":"Save"
+                }
+          ]
+      }
+    ]
+}
