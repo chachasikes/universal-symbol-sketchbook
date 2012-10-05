@@ -1,5 +1,16 @@
+body {
+  font-size: 16px;
+}
 #symbols-list ul li {
   list-style: none;
+}
+
+a {
+  color: #F9F7A0;
+}
+a:active, a:hover {
+  color: #FCF73D;
+  text-decoration: none;
 }
 
 #page-content {
@@ -9,6 +20,11 @@
 html, body {
   background: #000;
   color: #fff;
+}
+
+.nav > li > a:hover {
+text-decoration: none;
+background-color: #545352;
 }
 
 .symbol {
@@ -21,7 +37,7 @@ html, body {
 }
 
 .navbar-inner a.brand {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 0px;
 }
 
 .autocomplete,
@@ -40,4 +56,13 @@ html, body {
 
 .tab-pane {
   min-height: 300px;
+}
+
+#home .link {
+  margin: 60px;
+  display: block;
+}
+
+#home .content {
+   padding: 35px 0;
 }
