@@ -10,7 +10,7 @@ var express = require('express');
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 var zcache = { 'index.html': '' };
-zcache['index.html'] = fs.readFileSync('./public/index.html');
+zcache['index.html'] = fs.readFileSync('./gh-pages/index.html');
 
 //var gzippo = require('gzippo');
 
@@ -20,7 +20,7 @@ var app = module.exports = express.createServer();
 
 app.configure(function(){
   app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(__dirname + '/gh-pages'));
 });
 
 app.dynamicHelpers({
@@ -39,6 +39,15 @@ app.dynamicHelpers({
 app.get('/', function(req, res){
     res.send(zcache['index.html'], {'Content-Type': 'text/html'});
 });
+
+
+
+app.get('/symbols', function(req, res){
+  var blob = req.body;
+  var symbols = require('./gh-pages/data/raw/symbols.json');
+  res.send(symbols);
+});
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // openshift internal routes

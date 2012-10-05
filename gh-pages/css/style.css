@@ -1,3 +1,43 @@
 #symbols-list ul li {
   list-style: none;
 }
+
+#page-content {
+  margin-top: 50px;
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+}
+
+.symbol {
+  padding: 10px 30px 30px 30px;
+  background: #fff;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  margin-bottom: 35px;
+  color: #000;
+}
+
+.navbar-inner a.brand {
+  margin: 0 0 0 20px;
+}
+
+.autocomplete,
+.filter,
+.number-symbols {
+  margin: 35px;
+}
+
+.expand {
+  margin-top: 35px;
+}
+
+.symbol .content {
+  color: #999;
+}
+
+.tab-pane {
+  min-height: 300px;
+}

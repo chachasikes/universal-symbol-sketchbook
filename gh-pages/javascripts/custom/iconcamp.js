@@ -1,43 +1,63 @@
 window.onload = function() { init() };
 
 function init() {
+/*
   Tabletop.init( { 
     url: "https://docs.google.com/spreadsheet/pub?key=0AnUUGMHge9o_dFVnMXJyZlY3Z2RBMGdId3d1dGZ2dVE&single=true&gid=1&output=html",
     key: "0AnUUGMHge9o_dFVnMXJyZlY3Z2RBMGdId3d1dGZ2dVE",
     callback: showInfo,
     simpleSheet: true
   });
+*/
+  
+  
+    $.ajax({
+    url: "/symbols",
+    dataType: 'json',
+    success: showInfo,
+    error: function(error) { console.log("query error! " + error); console.log(error); return false; }
+  });
+  
 }
 
 
 function showInfo(data) {
-
+  var data = data.symbols;
   // Preprocess data
   for(var i=0; i < data.length; i++) {
-
-      console.log(data[i].status);
     switch(data[i].status) {
-      case 'Has sketches':
-        data[i].status_display = 'badge-important';
+      case 'Not vectorized':
+        data[i].status_display = 'badge-important not-vectorized';
         break;
-      case 'Finished':
-        data[i].status_display = 'badge-success';
+      case 'Vectors available':
+        data[i].status_display = 'badge-success vectors-available';
         break;        
       case 'Sketches missing':
-        data[i].status_display = 'badge-warning';
+        data[i].status_display = 'badge-warning sketches-missing';
         break;             
+      case 'No sketches':
+        data[i].status_display = 'no-sketches';
+        break;    
       default:
         data[i].status_display = '';
         break;
     }
-
-  
   }
-console.log(data);
+
 
   var template = $("#symbolsTemplate").html();  
   $("#symbols-list").html(_.template(template,{symbols: data}));  
   loadOembed('#symbols-list .media');
+  loadAutocomplete(data);
+  setupFilter(); 
+  
+  $('.expand').toggle(
+    function(){$(this).parent().find('.content').show(); $(this).html('<i class="icon-minus"></i>Hide'); },
+    function(){$(this).parent().find('.content').hide(); $(this).html('<i class="icon-plus"></i>Details'); }
+
+  );
+
+  $('.symbol .content').hide();
 }
 
 
@@ -85,3 +105,67 @@ loadOembed = function(container) {
   }    
   });
 };
+
+function loadAutocomplete(data) {
+  var autocomplete = [];
+  for (var i in data) {
+    var item = data[i];
+    autocomplete = _.union(autocomplete, item.name);
+  }
+
+  $('#symbols-autocomplete').typeahead({source:autocomplete});
+  
+  $('#symbols-autocomplete').change(function(){
+    $('#symbols-options').val("all");
+    var count = 0;
+    var query =  $('input#symbols-autocomplete').val();
+    $('#symbols-list .symbol').each(function(){  
+      var text = $(this).html();      
+      var match = text.search(query);
+      if(match != -1){
+        $(this).show();
+        count++;
+        $('.number-symbols').html(count + " for " + query);
+      }
+      else if(query === ""){
+        $(this).show();
+        count++;
+        $('.number-symbols').html(count);
+      }
+      else{
+        $(this).hide();
+      }
+    });  
+  });
+}
+
+function setupFilter() {
+  $('.filter').change(function() {
+    var count = 0;
+    $('#symbols-autocomplete').val('');
+    var link_category = $(this).find("option:selected").text();
+    $('#symbols-list .symbol').each(function(){  
+      var category = $(this).find('.status').html();    
+      var re = new RegExp("regex","g");
+      var match = category.match(re, link_category);
+      
+      if(category.indexOf(link_category) != -1){
+        $(this).show();
+        $('.number-symbols').html(count + " for " + link_category);
+        count++;
+
+      }
+      else if(link_category === "All"){
+        $(this).show();
+        count++;
+
+      }
+      else{
+        $(this).hide();
+      }
+    });
+  });
+  
+  
+  
+}
