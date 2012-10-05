@@ -58,6 +58,9 @@ function showInfo(data) {
   );
 
   $('.symbol .content').hide();
+
+  bindTabs(); 
+  tabInteractionsURL();
 }
 
 
@@ -138,6 +141,37 @@ function loadAutocomplete(data) {
     });  
   });
 }
+
+var ua = navigator.userAgent,
+    clickEvent = (ua.match(/iPad/i)) ? "touchstart" : "click";
+
+// Add a hash to the URL when the user clicks on a tab.
+function bindTabs() {
+
+  // Prevent multiple click event bindings, while still keeping the event listener for tab 'shown'
+  $('a[data-toggle="tab"]').unbind(clickEvent);
+  // Not IE7 compatible but oh well. If we need that we can switch to jquery address.
+  $('a[data-toggle="tab"]').bind(clickEvent, function(e) {
+    //console.log("-----BINDING TABS-----" + $(this).attr('href'));
+    history.pushState(null, null, $(this).attr('href'));
+    e.preventDefault();
+    $(this).tab('show');
+  });
+};
+
+// Navigate to a tab when the history changes
+function tabInteractionsURL(){
+  window.addEventListener("popstate", function(e) {
+    
+    var activeTab = $('[href=' + location.hash + ']');
+
+    if (activeTab.length) {
+      activeTab.tab('show');
+    } else {
+      $('#home').tab('show');
+    }
+  });
+};
 
 function setupFilter() {
   $('.filter').change(function() {
