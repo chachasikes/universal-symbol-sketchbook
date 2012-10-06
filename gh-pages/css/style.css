@@ -1,25 +1,38 @@
 body {
   font-size: 16px;
 }
+
 #symbols-list ul li {
   list-style: none;
 }
 
 a {
-  color: #F9F7A0;
+  color: #85A0C1;
 }
+
 a:active, a:hover {
-  color: #FCF73D;
+  color: #68ABFC;
   text-decoration: none;
 }
+
+
+a i {
+  font-size: 14px;
+  padding: 0 3px;
+}
+
 
 #page-content {
   margin-top: 50px;
 }
 
+.label-key {
+  font-size: 90%;
+}
+
 html, body {
-  background: #000;
-  color: #fff;
+  background: #262728;
+  color: #E0E0E0;
 }
 
 .nav > li > a:hover {
@@ -33,7 +46,7 @@ background-color: #545352;
   -moz-border-radius: 35px;
   border-radius: 35px;
   margin-bottom: 35px;
-  color: #000;
+  color: #262728;
 }
 
 .navbar-inner a.brand {
@@ -48,10 +61,12 @@ background-color: #545352;
 
 .expand {
   margin-top: 35px;
+  padding: 10px;
+  font-size: 90%;
 }
 
 .symbol .content {
-  color: #999;
+  color: #262728;
 }
 
 .tab-pane {
@@ -59,8 +74,8 @@ background-color: #545352;
 }
 
 #home .link {
-  margin: 60px;
-  display: block;
+
+
 }
 
 #home .content {

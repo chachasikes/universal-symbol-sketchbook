@@ -113,7 +113,13 @@ function loadAutocomplete(data) {
   var autocomplete = [];
   for (var i in data) {
     var item = data[i];
-    autocomplete = _.union(autocomplete, item.name);
+    if(item.tags !== null) {
+      var item_categories = item.tags.split(",");
+    }
+    else {
+      var item_categories = [];
+    }
+    autocomplete = _.union(autocomplete, item.name, item_categories);
   }
 
   $('#symbols-autocomplete').typeahead({source:autocomplete});
@@ -167,16 +173,18 @@ function tabInteractionsURL(){
 
     if (activeTab.length) {
       activeTab.tab('show');
+      
     } else {
       $('#home').tab('show');
     }
+    $('html, body').animate({scrollTop:0}, 'fast');
   });
 };
 
 function setupFilter() {
   $('.filter').change(function() {
     var count = 0;
-    $('#symbols-autocomplete').val('');
+    $('#symbols-autocomplete').val('');        
     var link_category = $(this).find("option:selected").text();
     $('#symbols-list .symbol').each(function(){  
       var category = $(this).find('.status').html();    
